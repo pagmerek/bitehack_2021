@@ -8,7 +8,7 @@
     <div class="form-group">
         <form method="post">
             {% csrf_token %}
-            <input type="text" name="search_text" required="" id="id_search_text"><input type="submit" value="Szukaj">
+            <input type="text" name="search_text" required="" id="id_search_text"><input type="submit" value="Szukaj"><input id="option_btn" type="button" value="...">
         </form>
     </div>
     {% if success %}
@@ -20,7 +20,12 @@
         {% endfor %}
     </div>
     {% endif %}
+
+    <div name="option_window" id="opt_win" class="opt_win">
+        <p>LOrem ipsum tralalalala</p>
+    </div>
 </div>
 <script src="{% static 'colorGen.js' %}"></script>
 <script src="{% static 'linkShorten.js' %}"></script>
+<script src="{% static 'optionWin.js' %}"></script>
 {% endblock %}
