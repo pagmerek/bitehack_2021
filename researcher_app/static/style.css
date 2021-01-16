@@ -70,4 +70,5 @@ body {
 .opt_win {
     display: none;
     position: absolute;
+    background-color: aquamarine;
 }
