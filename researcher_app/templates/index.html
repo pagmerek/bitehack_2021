@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <div class="d-flex p-2 justify-content-center main-container">
     <div class="title">
@@ -11,14 +12,14 @@
         </form>
     </div>
     {% if success %}
-    <div name="answers">
+    <div class="answers">
         {% for answer in answers %}
-        <div name="answer">
+        <div class="answer">
             {{ answer }}
         </div>
         {% endfor %}
     </div>
     {% endif %}
 </div>
-<script src="../static/colorGen.js"></script>
+<script src="{% static 'colorGen.js' %}"></script>
 {% endblock %}
