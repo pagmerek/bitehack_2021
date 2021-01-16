@@ -7,7 +7,7 @@ def query(request):
 
     res = client.query(request)
     try: 
-        text_val = next(res.results).plainText
+        text_val = next(res.results).text
         images = []
         for i in res:
             if(i.get('@title')):
@@ -18,6 +18,8 @@ def query(request):
         return text_val, images 
     
     # usually this is the standard library python error we get when wolfram can't find anything
+    except AttributeError:
+        return "",[]
+    
     except StopIteration:
-        return ""
-print(query('Terminator'))
+        return "",[]

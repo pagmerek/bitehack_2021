@@ -13,7 +13,9 @@ def index(request):
             google_answer = google_query(text)
             wolfram_answer, wolfram_image = wolfram_query(text)
             wiki_title, wiki_summary, wiki_image = wiki_query(text)
-            answers = [('Wikipedia',wiki_title + ' ' + wiki_summary),('Wolfram',wolfram_answer)]
+            answers = [('Wikipedia',wiki_title + ' ' + wiki_summary)]
+            if wolfram_answer != "":
+                answers.append(('Wolfram', wolfram_answer))
             stack_answers = stack_query(text)
             links = google_answer
             images = [wiki_image]
