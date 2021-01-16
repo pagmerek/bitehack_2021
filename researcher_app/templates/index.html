@@ -11,16 +11,28 @@
             <input type="text" name="search_text" required="" id="id_search_text"><input type="submit" value="Szukaj"><input id="option_btn" type="button" value="...">
         </form>
     </div>
-    {% if success %}
+    <!-- {% if success %}
     <div class="answers">
         {% for answer in answers %}
-        <div class="answer">
-            {{ answer }}
+        <div class="answer answer_text">
+            <span>{{ answer }}</span>
         </div>
         {% endfor %}
-    </div>
-    {% endif %}
 
+        {% for image in images %}
+            <div class="answer answer_image">
+                <img src={{ image }}>
+            </div>
+        {% endfor %}
+
+        {% for link in links %}
+            <div class="answer answer_links">
+                <p>{{ link }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %} -->
+    
     <div name="option_window" id="opt_win" class="opt_win">
         <legend>Choose your API's: </legend>
         <div>
