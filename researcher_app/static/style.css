@@ -1,3 +1,8 @@
+body {
+    overflow: hidden;
+    scrollbar-width: none;
+  }
+  
 .main-container {
     flex-direction: column;
     flex-wrap: wrap;
@@ -22,6 +27,28 @@
     padding: 30px;
     width: 300px;
     height: 300px;
+}
+
+.answer_text {
+    overflow-y: scroll;
+    scrollbar-width: none;  
+}
+
+.answer_text>span{
+    padding-bottom: 30px;
+}
+
+.answer_image>img {
+    max-width: 240px;
+    max-height: 240px;
+}
+
+.answer_image {
+    block-size: auto;
+}
+
+.answer_link {
+    max-width: scroll;
 }
 
 .answer_wide {
