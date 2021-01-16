@@ -11,10 +11,13 @@ def query(request):
         images = []
         for i in res:
             if(i.get('@title')):
+                print(i['subpod'])
                 if isinstance(i['subpod'],list):
-                    images.append(i['subpod'][0]['img']['@src'])
+                    if int(i['subpod'][0]['img']['@height']) >= 100 and int(i['subpod'][0]['img']['@width']) <= 300:
+                        images.append(i['subpod'][0]['img']['@src'])
                 else:
-                    images.append(i['subpod']['img']['@src'])
+                    if int(i['subpod']['img']['@height']) >= 100 and int(i['subpod']['img']['@width']) <= 300:
+                        images.append(i['subpod']['img']['@src'])
         return text_val, images 
     
     # usually this is the standard library python error we get when wolfram can't find anything
@@ -23,3 +26,4 @@ def query(request):
     
     except StopIteration:
         return "",[]
+

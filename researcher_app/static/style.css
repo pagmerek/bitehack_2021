@@ -11,8 +11,11 @@ body {
 
 .title {
     margin-bottom: 15px;
+    font-family: 'Open Sans', sans-serif;
 }
-
+.title > h1 {
+    font-size: 90px;
+}
 .answers {
     margin: 10px 20px 0px 20px;
     display: flex;
@@ -70,7 +73,10 @@ body {
 .opt_win {
     display: none;
     position: absolute;
-    background-color: aquamarine;
+    background-color: rgb(255, 246, 127);
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
 }
 
 .loader {
