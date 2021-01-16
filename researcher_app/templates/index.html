@@ -35,7 +35,22 @@
     
     <div name="option_window" id="opt_win" class="opt_win">
         <legend>Choose your API's: </legend>
-        {{select_form.as_p}}
+        <div>
+            <input type="checkbox" id="google" name="api", value="google" checked>
+            <label for="google">Google</label>
+        </div>
+        <div>
+            <input type="checkbox" id="stack" name="api", value="stack" checked>
+            <label for="stack">Stack Exchange</label>
+        </div>
+        <div>
+            <input type="checkbox" id="wolfram" name="api", value="wolfram" checked>
+            <label for="wolfram">Wolfram Alpha</label>
+        </div>
+        <div>
+            <input type="checkbox" id="wikipedia" name="api", value="wikipedia" checked>
+            <label for="wikipedia">Wikipedia</label>
+        </div>
     </div>
 </div>
 <script src="{% static 'colorGen.js' %}"></script>
