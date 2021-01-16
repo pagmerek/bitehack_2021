@@ -76,3 +76,29 @@ body {
 .loader {
     display: none;
 }
+
+.search_box {
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+.search_box>input {
+    border: 0px;
+    background-color: white;
+    border-style: solid;
+}
+
+#id_search_text {
+    margin-left: 2px;
+    height: 30px;
+    width: 26vw;
+    border-right: 2px;
+    border-style: solid;
+}
+
+#option_btn {
+    border-left: 2px;
+    border-style: solid;
+    height: 30px;
+}

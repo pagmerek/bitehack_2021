@@ -8,7 +8,11 @@
     <div class="form-group">
         <form method="post">
             {% csrf_token %}
-            <input type="text" name="search_text" required="" id="id_search_text"><input type="submit" value="Szukaj"><input id="option_btn" type="button" value="...">
+            <div class="search_box">
+                <input type="text" name="search_text" required="" id="id_search_text">
+                <input type="image" alt="Szukaj" src="{% static 'lupa_icon.svg' %}" value="Szukaj" width="18" height="18">
+                <input id="option_btn" type="button" value="...">
+            </div>
         </form>
     </div>
 
@@ -62,4 +66,5 @@
 <script src="{% static 'colorGen.js' %}"></script>
 <script src="{% static 'linkShorten.js' %}"></script>
 <script src="{% static 'optionWin.js' %}"></script>
+<script src="{% static 'onSubmit.js' %}"></script>
 {% endblock %}
