@@ -6,11 +6,15 @@ def query(request):
     client = wolframalpha.Client(app_id)
 
     res = client.query(request)
-
     try: 
-        return next(res.results).text
+        images = []
+        for i in res:
+            images.append(i['subpod']['img']['@src'])
+        print(images)
+        return next(res.results).text, images 
     
     # usually this is the standard library python error we get when wolfram can't find anything
     except StopIteration:
         return ""
 
+query('Rate of unemployment')
