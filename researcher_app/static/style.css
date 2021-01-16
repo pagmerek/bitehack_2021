@@ -28,6 +28,10 @@
     width: 620px;
 }
 
+.answer_tall {
+    height: 620px;
+}
+
 .answer_big {
     width: 620px;
     height: 620px;
