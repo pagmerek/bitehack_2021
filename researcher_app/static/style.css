@@ -41,14 +41,17 @@ body {
 .answer_image>img {
     max-width: 240px;
     max-height: 240px;
+    display: block;
+    margin: auto;  
 }
 
 .answer_image {
     block-size: auto;
 }
 
-.answer_link {
-    max-width: scroll;
+.answer_links {
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .answer_wide {
