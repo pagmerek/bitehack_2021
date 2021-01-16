@@ -8,3 +8,4 @@ def query(res):
         if j > 5: break
         stack_table.append([i.owner.profile_image, i.owner.display_name, i.score, i.title, i.link])
     return stack_table
+

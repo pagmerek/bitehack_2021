@@ -9,12 +9,14 @@ def query(request):
     try: 
         images = []
         for i in res:
-            images.append(i['subpod']['img']['@src'])
+            if(i.get('@title')):
+                if isinstance(i['subpod'],list):
+                    images.append(i['subpod'][0]['img']['@src'])
+                else:
+                    images.append(i['subpod']['img']['@src'])
         print(images)
         return next(res.results).text, images 
     
     # usually this is the standard library python error we get when wolfram can't find anything
     except StopIteration:
         return ""
-
-query('Rate of unemployment')
