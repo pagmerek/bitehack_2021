@@ -11,7 +11,7 @@
             <input type="text" name="search_text" required="" id="id_search_text"><input type="submit" value="Szukaj"><input id="option_btn" type="button" value="...">
         </form>
     </div>
-    <!-- {% if success %}
+    {% if success %}
     <div class="answers">
         {% for answer in answers %}
         <div class="answer answer_text">
@@ -25,32 +25,17 @@
             </div>
         {% endfor %}
 
-        {% for link in links %}
-            <div class="answer answer_links">
-                <p>{{ link }}</p>
-            </div>
-        {% endfor %}
+        <div class="answer answer_links">
+            {% for link in links %}
+                <a href={{ link }}>{{ link }}</a>
+            {% endfor %}
+        </div>
     </div>
-    {% endif %} -->
+    {% endif %} 
     
     <div name="option_window" id="opt_win" class="opt_win">
         <legend>Choose your API's: </legend>
-        <div>
-            <input type="checkbox" id="google" name="api", value="google" checked>
-            <label for="google">Google</label>
-        </div>
-        <div>
-            <input type="checkbox" id="stack" name="api", value="stack" checked>
-            <label for="stack">Stack Exchange</label>
-        </div>
-        <div>
-            <input type="checkbox" id="wolfram" name="api", value="wolfram" checked>
-            <label for="wolfram">Wolfram Alpha</label>
-        </div>
-        <div>
-            <input type="checkbox" id="wikipedia" name="api", value="wikipedia" checked>
-            <label for="wikipedia">Wikipedia</label>
-        </div>
+        {{select_form.as_p}}
     </div>
 </div>
 <script src="{% static 'colorGen.js' %}"></script>

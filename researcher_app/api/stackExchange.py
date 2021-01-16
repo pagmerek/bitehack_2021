@@ -1,6 +1,5 @@
 import stackexchange as ste
 
-
 def query(res):
     so = ste.Site(ste.StackOverflow)
     stack_table = []

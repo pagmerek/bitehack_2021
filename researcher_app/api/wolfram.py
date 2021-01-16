@@ -7,6 +7,7 @@ def query(request):
 
     res = client.query(request)
     try: 
+        text_val = next(res.results).plainText
         images = []
         for i in res:
             if(i.get('@title')):
@@ -14,9 +15,9 @@ def query(request):
                     images.append(i['subpod'][0]['img']['@src'])
                 else:
                     images.append(i['subpod']['img']['@src'])
-        print(images)
-        return next(res.results).text, images 
+        return text_val, images 
     
     # usually this is the standard library python error we get when wolfram can't find anything
     except StopIteration:
         return ""
+print(query('Terminator'))
