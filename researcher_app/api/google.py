@@ -11,5 +11,3 @@ def query(res):
     google_table = [link for link in google_dict.values()]
     return google_table
     
-
-query('Triangulation')
