@@ -1,0 +1,25 @@
+.main-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.answers {
+    margin: 10px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.answer {
+    float: left;
+    box-shadow: 3px 3px 5px #111111;
+    margin: 10px;
+    padding: 30px;
+    width: 300px;
+    height: 300px;
+}
