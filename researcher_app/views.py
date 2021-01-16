@@ -11,9 +11,11 @@ def index(request):
             text = form['search_text'].value()
             google_answer = google_query(text)
             wolfram_answer = wolfram_query(text)
-            wiki_answer = wiki_query(text)
-            answers = [google_answer, wolfram_answer, wiki_answer]
-            return render(request, 'index.html', {'form':form,'answers': answers, 'success':True})
+            wiki_title, wiki_summary, image = wiki_query(text)
+            answers = [('Wikipedia',wiki_title + ' ' + wiki_summary),('Wolfram',wolfram_answer)]
+            links = google_answer
+            
+            return render(request, 'index.html', {'form':form,'answers': answers, 'images':image,'links':links, 'success':True})
     else:
         form = SearchForm()
 
