@@ -12,4 +12,11 @@ function showWindow(evt){
     }
 }
 
+function hideOptWin(){
+    let el = document.getElementById("opt_win");
+    if(el) {
+        el.style.display = "none";
+    }
+}
+
 document.getElementById("option_btn").addEventListener("click", showWindow);
