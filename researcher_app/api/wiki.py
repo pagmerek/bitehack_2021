@@ -7,7 +7,7 @@ def query(request):
         page = wikipedia.page(request)
 
     except wikipedia.DisambiguationError:
-        print("Wikipedia couldn't make it :(")
+        return ""
     
 
     # get only 2 first sentences of the summary to be most concise.
@@ -15,8 +15,8 @@ def query(request):
 
     # it's possible to load images with page.images, page.images[0] for the first image.
 
-    
-    print(page.title)
-    print(summary)
+    # uncomment if page title may be useful
+    # return page.title, summary
+    return summary
 
 
