@@ -66,3 +66,8 @@ body {
     width: 620px;
     height: 620px;
 }
+
+.opt_win {
+    display: none;
+    position: absolute;
+}
