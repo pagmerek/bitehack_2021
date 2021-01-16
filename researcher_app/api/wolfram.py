@@ -1,18 +1,16 @@
 import wolframalpha
 
-app_id = 'W3L5WX-P6EAVKL8XV'
-client = wolframalpha.Client(app_id)
+def query(request):
 
-def query(req):
-    res = client.query(req)
+    app_id = 'W3L5WX-P6EAVKL8XV'
+    client = wolframalpha.Client(app_id)
 
-    def wolframCheckRes(res):
-        status = res['@success'] and not(res['@error'])
-        return status
+    res = client.query(request)
 
-    if wolframCheckRes(res):
+    try: 
         return next(res.results).text
-    else:
+    
+    # usually this is the standard library python error we get when wolfram can't find anything
+    except StopIteration:
         return ""
-
 
