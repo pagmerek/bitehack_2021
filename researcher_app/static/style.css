@@ -72,3 +72,7 @@ body {
     position: absolute;
     background-color: aquamarine;
 }
+
+.loader {
+    display: none;
+}
