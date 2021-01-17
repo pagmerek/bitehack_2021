@@ -71,6 +71,16 @@
         {% empty %}
         {% endfor %}
 
+        {% for youtube_answer in youtube_answers %}
+        <div class="answer">
+            <a class="answer_youtube" href="{{ youtube_answer.2 }}" title="{{ stack_answer.0 }}">
+                <img src="{{ youtube_answer.1 }}"> 
+                <span>{{ youtube_answer.0 }}</span>
+            </a>
+        </div>
+        {% empty %}
+        {% endfor %}
+
         {% if links %}
         <div class="answer answer_links">
             {% for link in links %}
