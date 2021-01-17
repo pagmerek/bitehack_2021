@@ -12,11 +12,28 @@ function showWindow(evt){
     }
 }
 
+function closeWindow(evt){
+    let target = evt.target;
+
+    if(!document.getElementById("opt_win").parentNode.contains(target)){
+        if(target.id) {
+            if(target.id.localeCompare("option_btn")!=0){
+                hideOptWin();
+            }
+        }
+        else {
+            hideOptWin();
+        }
+    }
+}
+
 function hideOptWin(){
     let el = document.getElementById("opt_win");
+
     if(el) {
         el.style.display = "none";
     }
 }
 
 document.getElementById("option_btn").addEventListener("click", showWindow);
+document.addEventListener("click", closeWindow);
