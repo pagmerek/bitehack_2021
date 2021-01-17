@@ -52,7 +52,7 @@ body {
     
 }
 
-.answer_image>img {
+.answer_image>a>img {
     max-width: 240px;
     max-height: 240px;
     display: block;
