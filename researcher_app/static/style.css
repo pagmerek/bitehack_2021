@@ -42,7 +42,12 @@ body {
 .answer_text {
     overflow-y: scroll;
     scrollbar-width: none;  
+    -ms-overflow-style: none; 
 }
+
+.answer_text:-webkit-scrollbar {
+    display: none;
+  }
 
 .answer_text>span{
     font-family: 'Open Sans';
@@ -66,6 +71,11 @@ body {
 .answer_links {
     overflow-y: scroll;
     scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+.answer_links:-webkit-scrollbar {
+    display: none;
 }
 
 .answer_wide {
