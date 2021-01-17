@@ -46,9 +46,9 @@ body {
     -ms-overflow-style: none; 
 }
 
-.answer_text:-webkit-scrollbar {
+.answer_text::-webkit-scrollbar {
     display: none;
-  }
+}
 
 .answer_text>span{
     font-family: 'Open Sans';
@@ -85,9 +85,9 @@ body {
     color: #0d6efd;
 }
 
-.answer_links:-webkit-scrollbar {
+.answer_links::-webkit-scrollbar {
     display: none;
-}
+  }
 
 .answer_wide {
     width: 620px;
