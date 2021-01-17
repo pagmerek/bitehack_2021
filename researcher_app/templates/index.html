@@ -38,11 +38,9 @@
             </div>
         </form>
     </div>
-
     <div name="loader" id="loader" class="loader">
         <img src="{% static 'loader.gif' %}">
     </div>
-
     {% if success %}
     <div class="answers">
         {% for answer in answers %}
@@ -52,14 +50,12 @@
         </div>
         {% empty %}
         {% endfor %}
-
         {% for image in images %}
             <div class="answer answer_image">
                 <a href={{ image }}><img src={{ image }}></a>
             </div>
         {% empty %}
         {% endfor %}
-
         {% for stack_answer in stack_answers %}
         <div class="answer">
             <a class="answer_stack" href="{{ stack_answer.4 }}" title="{{ stack_answer.1 }}">
@@ -70,7 +66,6 @@
         </div>
         {% empty %}
         {% endfor %}
-
         {% for youtube_answer in youtube_answers %}
         <div class="answer">
             <a class="answer_youtube" href="{{ youtube_answer.2 }}" title="{{ stack_answer.0 }}">
@@ -80,7 +75,6 @@
         </div>
         {% empty %}
         {% endfor %}
-
         {% if links %}
         <div class="answer answer_links">
             {% for link in links %}
@@ -90,8 +84,6 @@
         {% endif %}
     </div>
     {% endif %} 
-    
-    
 </div>
 <script src="{% static 'colorGen.js' %}"></script>
 <script src="{% static 'linkShorten.js' %}"></script>
