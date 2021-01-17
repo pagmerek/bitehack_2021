@@ -46,12 +46,14 @@
             <h1> {{ answer.0 }}</h1>
             <span>{{ answer.1 }}</span>
         </div>
+        {% empty %}
         {% endfor %}
 
         {% for image in images %}
             <div class="answer answer_image">
                 <a href={{ image }}><img src={{ image }}></a>
             </div>
+        {% empty %}
         {% endfor %}
 
         {% for stack_answer in stack_answers %}
@@ -62,13 +64,16 @@
                 <span>{{ stack_answer.3 }}</span>
             </a>
         </div>
+        {% empty %}
         {% endfor %}
 
+        {% if links %}
         <div class="answer answer_links">
             {% for link in links %}
                 <a href={{ link }}>{{ link }}</a>
             {% endfor %}
         </div>
+        {% endif %}
     </div>
     {% endif %} 
     
