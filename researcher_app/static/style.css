@@ -116,6 +116,7 @@ body {
 }
 
 .search_box {
+    background-color: white;
     border: 2px;
     border-color: black;
     border-style: solid;
@@ -128,7 +129,6 @@ body {
 }
 
 #id_search_text {
-    margin-left: 2px;
     height: 30px;
     width: 26vw;
     border-right: 2px;
