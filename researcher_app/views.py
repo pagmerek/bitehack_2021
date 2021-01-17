@@ -3,6 +3,7 @@ from researcher_app.forms import SearchForm
 from researcher_app.api.wiki import query as wiki_query
 from researcher_app.api.wolfram import query as wolfram_query
 from researcher_app.api.google import query as google_query
+from researcher_app.api.youtube import query as youtube_query
 from researcher_app.api.stackExchange import query as stack_query
 # Create your views here.
 def index(request):
@@ -12,7 +13,9 @@ def index(request):
         if form.is_valid():
             print(apis)
             text = form['search_text'].value()
-            google_answer, wolfram_answer, wolfram_image, wiki_answer, wiki_image,stack_answers = "","",[],"","",[]
+            google_answer, wolfram_answer, wolfram_image, wiki_answer, wiki_image,stack_answers,youtube_answers = "","",[],"","",[],[]
+            if 'youtube' in apis:
+                youtube_answers = youtube_query(text)
             if 'google' in apis:
                 google_answer = google_query(text)
             if 'wikipedia' in apis:
@@ -33,7 +36,7 @@ def index(request):
             images.extend(wolfram_image)
             if images[0] == '': images.remove('')
             return render(request, 'index.html', {'form':form,'answers': answers, 'images':images,'links':links,
-                                                    'stack_answers':stack_answers, 'success':True})
+                                                    'stack_answers':stack_answers,'youtube_answers':youtube_answers, 'success':True})
     else:
         form = SearchForm()
 
