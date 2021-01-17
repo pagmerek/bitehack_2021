@@ -69,6 +69,7 @@ body {
 }
 
 .answer_links {
+    display: grid;
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none; 
