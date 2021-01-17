@@ -31,6 +31,6 @@ def query(request):
 
     # uncomment if page title may be useful
     # return page.title, summary
-    return title, page_summary, image
+    return title + page_summary, image
 
 

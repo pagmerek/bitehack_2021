@@ -8,19 +8,20 @@ from researcher_app.api.stackExchange import query as stack_query
 def index(request):
     if request.method == 'POST':
         apis = request.POST.getlist("api")
-        print(apis)
         form = SearchForm(request.POST)
         if form.is_valid():
+            print(apis)
             text = form['search_text'].value()
-            google_answer = google_query(text)
-            wolfram_answer, wolfram_image = wolfram_query(text)
-            wiki_title, wiki_summary, wiki_image = wiki_query(text)
+            google_answer = google_query(text) if 'google' in apis else ""
+            wolfram_answer, wolfram_image = wolfram_query(text) if 'wolfram' in apis else "", []
+            wiki_answer, wiki_image = wiki_query(text) if 'wikipedia' in apis else "", ""
+            stack_answers = stack_query(text) if 'stack' in apis else ""
             answers = []
-            if wiki_title != "":
-                answers.append(('Wikipedia',wiki_title + ' ' + wiki_summary))
+            if wiki_answer != "":
+                answers.append(('Wikipedia', wiki_answer ))
             if wolfram_answer != "":
                 answers.append(('Wolfram', wolfram_answer))
-            stack_answers = stack_query(text)
+           
             links = google_answer
             images = [wiki_image]
             images.extend(wolfram_image)
