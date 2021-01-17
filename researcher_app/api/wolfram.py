@@ -11,7 +11,6 @@ def query(request):
         images = []
         for i in res:
             if(i.get('@title')):
-                print(i['subpod'])
                 if isinstance(i['subpod'],list):
                     if int(i['subpod'][0]['img']['@height']) >= 100 and int(i['subpod'][0]['img']['@width']) <= 300:
                         images.append(i['subpod'][0]['img']['@src'])
