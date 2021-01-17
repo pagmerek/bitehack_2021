@@ -1,4 +1,11 @@
+
+
+h1 {
+    font-family: 'Arvo', serif;
+}
+
 body {
+    
     overflow-y: scroll;
     scrollbar-width: none;
   }
@@ -38,7 +45,11 @@ body {
 }
 
 .answer_text>span{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 16px;
     padding-bottom: 30px;
+    
 }
 
 .answer_image>img {
