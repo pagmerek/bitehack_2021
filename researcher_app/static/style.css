@@ -119,3 +119,28 @@ body {
     border-style: solid;
     height: 30px;
 }
+
+.answer_stack {
+    align-items: center;
+    display: flex;
+    color: black;
+    text-decoration: none;
+    flex-direction: column;
+}
+
+.score {
+    position: relative;
+    left: 120;
+    bottom: 170;
+    font-weight: bold;
+    font-size: large;
+}
+
+.answer_stack>img {
+    width: 150px;
+    height: 150px;
+}
+
+.answer_stack>span {
+    text-align: center;
+}

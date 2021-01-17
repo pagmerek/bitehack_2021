@@ -35,6 +35,16 @@
             </div>
         {% endfor %}
 
+        {% for stack_answer in stack_answers %}
+        <div class="answer">
+            <a class="answer_stack" href="{{ stack_answer.4 }}" title="{{ stack_answer.1 }}">
+                <img src="{{ stack_answer.0 }}"> 
+                <span class="score">{{ stack_answer.2 }}</span>
+                <span>{{ stack_answer.3 }}</span>
+            </a>
+        </div>
+        {% endfor %}
+
         <div class="answer answer_links">
             {% for link in links %}
                 <a href={{ link }}>{{ link }}</a>
