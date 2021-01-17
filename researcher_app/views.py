@@ -12,11 +12,17 @@ def index(request):
         if form.is_valid():
             print(apis)
             text = form['search_text'].value()
-            google_answer = google_query(text) if 'google' in apis else ""
-            wolfram_answer, wolfram_image = wolfram_query(text) if 'wolfram' in apis else "", []
-            wiki_answer, wiki_image = wiki_query(text) if 'wikipedia' in apis else "", ""
-            stack_answers = stack_query(text) if 'stack' in apis else ""
+            google_answer, wolfram_answer, wolfram_image, wiki_answer, wiki_image,stack_answers = "","",[],"","",[]
+            if 'google' in apis:
+                google_answer = google_query(text)
+            if 'wikipedia' in apis:
+                wiki_answer,wiki_image = wiki_query(text)
+            if 'wolfram' in apis:
+                wolfram_answer,wolfram_image = wolfram_query(text)
+            if 'stack' in apis:
+                stack_answers = stack_query(text)
             answers = []
+            print(wiki_answer,wolfram_answer)
             if wiki_answer != "":
                 answers.append(('Wikipedia', wiki_answer ))
             if wolfram_answer != "":
