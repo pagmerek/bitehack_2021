@@ -7,6 +7,8 @@ from researcher_app.api.stackExchange import query as stack_query
 # Create your views here.
 def index(request):
     if request.method == 'POST':
+        apis = request.POST.getlist("api")
+        print(apis)
         form = SearchForm(request.POST)
         if form.is_valid():
             text = form['search_text'].value()
@@ -22,6 +24,7 @@ def index(request):
             links = google_answer
             images = [wiki_image]
             images.extend(wolfram_image)
+            if images[0] == '': images.remove('')
             return render(request, 'index.html', {'form':form,'answers': answers, 'images':images,'links':links,
                                                     'stack_answers':stack_answers, 'success':True})
     else:
