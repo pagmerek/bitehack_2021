@@ -1,4 +1,4 @@
-answersColors = ["#FBF55A", "#A1FB5A", "#B45AFB", "#5ACBFB", "#FBC45A", "#5A60FB", "#FB5AD7", "#FB5A5A"]
+answersColors = ["#98979C", "#CEAA78", "#CE8350", "#B8613A"]
 
 function setColor(divAnswer) {
     divAnswer.style.backgroundColor = answersColors[Math.floor(Math.random() * answersColors.length)];
